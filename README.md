@@ -13,6 +13,35 @@ Looking at my assignments throughout the term, I do think that I have gotten bet
 The greatest source of difficulty was easily the independent development project, due to my choice of what to do likley being a case of me biting off more than I can chew in the time that was available. I feel that I really didn't fully consider just how much can factor into the decision making for something like 5 card draw poker, and how complicated things can get. Even without the AI, the core poker game itself had quite a bit to think about and implement.
 
 ## Demonstrate here some code that you are particularly proud of (or provide a specific link to your GitHub repository, or other). Explain why you chose this code and tell me how it demonstrates some aspect of your learning this semester.
+One piece of code that I am particularly proud of is my final solution to my first advent of code assignment:
+```kotlin
+var lookAndSay = input[0]
+repeat(50) {
+    lookAndSay = """(\d)\1*""".toRegex().findAll(lookAndSay)
+        .map { it.value.length.toString() + it.value[0].toString() }.joinToString("")
+}
+return lookAndSay.length
+```
+This code to me is a great example of taking coding knowledge I already knew from outside of the course (regex expressions), and applying things I learned in class (Kotlin collection operations) and my own additional research (Regex capture groups) to create a concise and effective piece of code that was significanlty faster at the task it was written for than the initial brute-force looping based approach.
+
+Another piece of code that I'm proud of is my third advent of code assignment:
+```kotlin
+var currentRow = input.first()
+var result = currentRow.count { it == '.'}
+currentRow = ".$currentRow."
+
+// repeat for 1 less than the desired number of rows, as the first row is provided
+repeat(rows-1) {
+    var nextRow = ""
+    for (i in 1 until currentRow.length -1) nextRow += if (currentRow[i-1] == currentRow[i+1]) "." else "^"
+    result += nextRow.count { it == '.' }
+    currentRow = ".$nextRow."
+}
+return result
+```
+This code I'm proud of moreso due to it being a representation of examining the problem at hand and really thinking about what actually needs to be accomplished to complete the task (in this case from analyzing the ruleset for the advent of code problem and realizing how it can be condensed down to a simpler ruleset.
+
+I also think that both of these pieces of code are good examples of my learning about coding idioms and using them to write shorter, cleaner code.
 
 ## What remains incomplete from DGL 204? Is there work that you didn’t finish, or is there more learning that you hope to complete? What will you do to address this?
 
