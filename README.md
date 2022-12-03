@@ -1,6 +1,7 @@
 # DGL204-FinalEvaluation
 
 ## What did you enjoy the most about DGL 204?
+The thing that I enjoyed the most out of this course were the advent of code assignments and the independent development project. The advent of code assignments were fun little coding assignments that were good at getting me to think more about how to write clean and concise code, as well as when to stop trying to make code more concise for the sake of readability. The independent development project, while perhaps something I went a bit too ambitious on, was just a big coding project, which is the kind of assignment I just tend to enjoy the most in classes like this.
 
 ## What did you enjoy the least about DGL 204?
 
